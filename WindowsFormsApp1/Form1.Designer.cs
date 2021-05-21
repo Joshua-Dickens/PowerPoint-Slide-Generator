@@ -63,12 +63,12 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonGenerate = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.buttonBGColor = new System.Windows.Forms.Button();
             this.bgColor = new System.Windows.Forms.PictureBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.buttonFontColor = new System.Windows.Forms.Button();
             this.fontColor = new System.Windows.Forms.PictureBox();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -482,6 +482,7 @@ namespace WindowsFormsApp1
             this.buttonSearch.TabIndex = 0;
             this.buttonSearch.Text = "Search for Images";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonGenerate
             // 
@@ -492,17 +493,6 @@ namespace WindowsFormsApp1
             this.buttonGenerate.TabIndex = 1;
             this.buttonGenerate.Text = "Generate Slide";
             this.buttonGenerate.UseVisualStyleBackColor = true;
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.AutoSize = true;
-            this.buttonClose.Location = new System.Drawing.Point(3, 219);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 30);
-            this.buttonClose.TabIndex = 2;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // buttonBGColor
             // 
@@ -543,6 +533,17 @@ namespace WindowsFormsApp1
             this.fontColor.Size = new System.Drawing.Size(50, 30);
             this.fontColor.TabIndex = 4;
             this.fontColor.TabStop = false;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.Location = new System.Drawing.Point(3, 219);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 30);
+            this.buttonClose.TabIndex = 2;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // Form1
             // 

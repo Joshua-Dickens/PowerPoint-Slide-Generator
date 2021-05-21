@@ -125,5 +125,22 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string titlePlainText = titleText.Text;
+            string tempBodyText = "";
+            string bodyPlainText = bodyText.Rtf;
+            while (bodyPlainText.IndexOf("\\b") != -1)
+            {
+                int start = bodyPlainText.IndexOf("\\b") + 2;
+                int end = bodyPlainText.IndexOf("\\b0");
+                tempBodyText += bodyPlainText.Substring(start, end - start) + '?';
+                bodyPlainText = bodyPlainText.Substring(end + 3);
+            }
+            tempBodyText = tempBodyText.Substring(0, tempBodyText.Length - 1);
+            string[] bodyTerms = tempBodyText.Split('?');
+            bodyText.Text = bodyTerms.Length.ToString();
+        }
     }
 }
