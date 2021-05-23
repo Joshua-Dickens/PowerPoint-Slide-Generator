@@ -157,7 +157,7 @@ namespace WindowsFormsApp1
             string bodyPlainText = bodyText.Text;
             Color background = bgColor.BackColor;
             Color font = fontColor.BackColor;
-            Boolean check1 = checkBox1.Checked;
+            bool[] checkBoxes = {checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked, checkBox6.Checked, checkBox7.Checked, checkBox8.Checked, checkBox9.Checked, checkBox10.Checked };
 
         }
 
