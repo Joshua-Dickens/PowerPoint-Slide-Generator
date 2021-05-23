@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
             {
                 // Create a query
                 var client = new HttpClient();
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "dc8a13278a8a4018a4cd19b0c8f32344");
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "API Key");
                 var queryString = HttpUtility.ParseQueryString(string.Empty);
                 queryString["q"] = userQuery;
                 queryString["responseFilter"] = "images";
