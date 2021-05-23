@@ -158,6 +158,8 @@ namespace WindowsFormsApp1
             string bodyPlainText = bodyText.Text;
             Color background = bgColor.BackColor;
             Color font = fontColor.BackColor;
+            Boolean check1 = checkBox1.Checked;
+
         }
 
         private void RunQueryAndDisplayResults(string userQuery)
@@ -268,6 +270,9 @@ namespace WindowsFormsApp1
             
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
