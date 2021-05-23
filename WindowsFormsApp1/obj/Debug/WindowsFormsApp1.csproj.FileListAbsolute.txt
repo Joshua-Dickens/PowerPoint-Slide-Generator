@@ -11,3 +11,5 @@ D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.dll
+D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.xml

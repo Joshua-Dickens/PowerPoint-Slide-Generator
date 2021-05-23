@@ -31,9 +31,6 @@ namespace WindowsFormsApp1
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonBold1 = new System.Windows.Forms.Button();
-            this.buttonUnderline1 = new System.Windows.Forms.Button();
-            this.buttonItalics1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -56,19 +53,18 @@ namespace WindowsFormsApp1
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBold = new System.Windows.Forms.Button();
-            this.buttonUnderline = new System.Windows.Forms.Button();
-            this.buttonItalics = new System.Windows.Forms.Button();
             this.bodyText = new System.Windows.Forms.RichTextBox();
             this.titleText = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonGenerate = new System.Windows.Forms.Button();
-            this.buttonBGColor = new System.Windows.Forms.Button();
-            this.bgColor = new System.Windows.Forms.PictureBox();
-            this.buttonFontColor = new System.Windows.Forms.Button();
-            this.fontColor = new System.Windows.Forms.PictureBox();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,8 +79,6 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bgColor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontColor)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -138,47 +132,14 @@ namespace WindowsFormsApp1
             // flowLayoutPanel2
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.buttonBold1);
-            this.flowLayoutPanel2.Controls.Add(this.buttonUnderline1);
-            this.flowLayoutPanel2.Controls.Add(this.buttonItalics1);
+            this.flowLayoutPanel2.Controls.Add(this.label2);
+            this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(261, 326);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(510, 74);
             this.flowLayoutPanel2.TabIndex = 23;
-            // 
-            // buttonBold1
-            // 
-            this.buttonBold1.AutoSize = true;
-            this.buttonBold1.Location = new System.Drawing.Point(3, 3);
-            this.buttonBold1.Name = "buttonBold1";
-            this.buttonBold1.Size = new System.Drawing.Size(51, 30);
-            this.buttonBold1.TabIndex = 23;
-            this.buttonBold1.Text = "Bold";
-            this.buttonBold1.UseVisualStyleBackColor = true;
-            this.buttonBold1.Click += new System.EventHandler(this.buttonBold1_Click);
-            // 
-            // buttonUnderline1
-            // 
-            this.buttonUnderline1.AutoSize = true;
-            this.buttonUnderline1.Location = new System.Drawing.Point(60, 3);
-            this.buttonUnderline1.Name = "buttonUnderline1";
-            this.buttonUnderline1.Size = new System.Drawing.Size(87, 30);
-            this.buttonUnderline1.TabIndex = 24;
-            this.buttonUnderline1.Text = "Underline";
-            this.buttonUnderline1.UseVisualStyleBackColor = true;
-            this.buttonUnderline1.Click += new System.EventHandler(this.buttonUnderline1_Click);
-            // 
-            // buttonItalics1
-            // 
-            this.buttonItalics1.AutoSize = true;
-            this.buttonItalics1.Location = new System.Drawing.Point(153, 3);
-            this.buttonItalics1.Name = "buttonItalics1";
-            this.buttonItalics1.Size = new System.Drawing.Size(75, 30);
-            this.buttonItalics1.TabIndex = 25;
-            this.buttonItalics1.Text = "Italics";
-            this.buttonItalics1.UseVisualStyleBackColor = true;
-            this.buttonItalics1.Click += new System.EventHandler(this.buttonItalics1_Click);
             // 
             // pictureBox1
             // 
@@ -394,8 +355,6 @@ namespace WindowsFormsApp1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel1, 2);
             this.flowLayoutPanel1.Controls.Add(this.buttonBold);
-            this.flowLayoutPanel1.Controls.Add(this.buttonUnderline);
-            this.flowLayoutPanel1.Controls.Add(this.buttonItalics);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(777, 326);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -413,28 +372,6 @@ namespace WindowsFormsApp1
             this.buttonBold.UseVisualStyleBackColor = true;
             this.buttonBold.Click += new System.EventHandler(this.buttonBold_Click_1);
             // 
-            // buttonUnderline
-            // 
-            this.buttonUnderline.AutoSize = true;
-            this.buttonUnderline.Location = new System.Drawing.Point(60, 3);
-            this.buttonUnderline.Name = "buttonUnderline";
-            this.buttonUnderline.Size = new System.Drawing.Size(87, 30);
-            this.buttonUnderline.TabIndex = 24;
-            this.buttonUnderline.Text = "Underline";
-            this.buttonUnderline.UseVisualStyleBackColor = true;
-            this.buttonUnderline.Click += new System.EventHandler(this.buttonUnderline_Click);
-            // 
-            // buttonItalics
-            // 
-            this.buttonItalics.AutoSize = true;
-            this.buttonItalics.Location = new System.Drawing.Point(153, 3);
-            this.buttonItalics.Name = "buttonItalics";
-            this.buttonItalics.Size = new System.Drawing.Size(75, 30);
-            this.buttonItalics.TabIndex = 25;
-            this.buttonItalics.Text = "Italics";
-            this.buttonItalics.UseVisualStyleBackColor = true;
-            this.buttonItalics.Click += new System.EventHandler(this.buttonItalics_Click);
-            // 
             // bodyText
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.bodyText, 2);
@@ -443,7 +380,7 @@ namespace WindowsFormsApp1
             this.bodyText.Name = "bodyText";
             this.bodyText.Size = new System.Drawing.Size(511, 317);
             this.bodyText.TabIndex = 21;
-            this.bodyText.Text = "Enter Slide Body Here, bold keywords to increase search accuracy.";
+            this.bodyText.Text = "Enter Slide Body Here";
             this.bodyText.TextChanged += new System.EventHandler(this.bodyText_TextChanged);
             // 
             // titleText
@@ -458,12 +395,11 @@ namespace WindowsFormsApp1
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.Controls.Add(this.label3);
             this.flowLayoutPanel3.Controls.Add(this.buttonSearch);
+            this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.buttonGenerate);
-            this.flowLayoutPanel3.Controls.Add(this.buttonBGColor);
-            this.flowLayoutPanel3.Controls.Add(this.bgColor);
-            this.flowLayoutPanel3.Controls.Add(this.buttonFontColor);
-            this.flowLayoutPanel3.Controls.Add(this.fontColor);
+            this.flowLayoutPanel3.Controls.Add(this.progressBar1);
             this.flowLayoutPanel3.Controls.Add(this.buttonClose);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -476,7 +412,7 @@ namespace WindowsFormsApp1
             // buttonSearch
             // 
             this.buttonSearch.AutoSize = true;
-            this.buttonSearch.Location = new System.Drawing.Point(3, 3);
+            this.buttonSearch.Location = new System.Drawing.Point(3, 63);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(150, 30);
             this.buttonSearch.TabIndex = 0;
@@ -487,7 +423,7 @@ namespace WindowsFormsApp1
             // buttonGenerate
             // 
             this.buttonGenerate.AutoSize = true;
-            this.buttonGenerate.Location = new System.Drawing.Point(3, 39);
+            this.buttonGenerate.Location = new System.Drawing.Point(3, 159);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(126, 30);
             this.buttonGenerate.TabIndex = 1;
@@ -495,56 +431,64 @@ namespace WindowsFormsApp1
             this.buttonGenerate.UseVisualStyleBackColor = true;
             this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
-            // buttonBGColor
-            // 
-            this.buttonBGColor.AutoSize = true;
-            this.buttonBGColor.Location = new System.Drawing.Point(3, 75);
-            this.buttonBGColor.Name = "buttonBGColor";
-            this.buttonBGColor.Size = new System.Drawing.Size(234, 30);
-            this.buttonBGColor.TabIndex = 0;
-            this.buttonBGColor.Text = "Select Background Color";
-            this.buttonBGColor.UseVisualStyleBackColor = true;
-            this.buttonBGColor.Click += new System.EventHandler(this.buttonBGColor_Click);
-            // 
-            // bgColor
-            // 
-            this.bgColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bgColor.Location = new System.Drawing.Point(3, 111);
-            this.bgColor.Name = "bgColor";
-            this.bgColor.Size = new System.Drawing.Size(50, 30);
-            this.bgColor.TabIndex = 1;
-            this.bgColor.TabStop = false;
-            // 
-            // buttonFontColor
-            // 
-            this.buttonFontColor.AutoSize = true;
-            this.buttonFontColor.Location = new System.Drawing.Point(3, 147);
-            this.buttonFontColor.Name = "buttonFontColor";
-            this.buttonFontColor.Size = new System.Drawing.Size(234, 30);
-            this.buttonFontColor.TabIndex = 3;
-            this.buttonFontColor.Text = "Select Font Color";
-            this.buttonFontColor.UseVisualStyleBackColor = true;
-            this.buttonFontColor.Click += new System.EventHandler(this.buttonFontColor_Click);
-            // 
-            // fontColor
-            // 
-            this.fontColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fontColor.Location = new System.Drawing.Point(3, 183);
-            this.fontColor.Name = "fontColor";
-            this.fontColor.Size = new System.Drawing.Size(50, 30);
-            this.fontColor.TabIndex = 4;
-            this.fontColor.TabStop = false;
-            // 
             // buttonClose
             // 
             this.buttonClose.AutoSize = true;
-            this.buttonClose.Location = new System.Drawing.Point(3, 219);
+            this.buttonClose.Location = new System.Drawing.Point(3, 224);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 30);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Select up to 5 Images below";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(410, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Bold keywords in the body for more specific image results";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(244, 60);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Once you have filled out your title and body click here to search for images";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(243, 60);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Once you have selected your images click here to generate the slide for the power" +
+    "point ";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 195);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(200, 23);
+            this.progressBar1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -573,8 +517,6 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bgColor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontColor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,22 +547,18 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RichTextBox bodyText;
         private System.Windows.Forms.Button buttonBold;
-        private System.Windows.Forms.Button buttonUnderline;
-        private System.Windows.Forms.Button buttonItalics;
         private System.Windows.Forms.RichTextBox titleText;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button buttonBold1;
-        private System.Windows.Forms.Button buttonUnderline1;
-        private System.Windows.Forms.Button buttonItalics1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Button buttonBGColor;
-        private System.Windows.Forms.PictureBox bgColor;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button buttonFontColor;
-        private System.Windows.Forms.PictureBox fontColor;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
