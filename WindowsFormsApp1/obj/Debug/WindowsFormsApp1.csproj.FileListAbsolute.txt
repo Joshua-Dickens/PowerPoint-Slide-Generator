@@ -8,3 +8,6 @@ D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\VSCODE\PowerPoint Slide Generator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete

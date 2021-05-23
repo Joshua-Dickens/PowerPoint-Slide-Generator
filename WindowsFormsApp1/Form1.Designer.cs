@@ -443,7 +443,7 @@ namespace WindowsFormsApp1
             this.bodyText.Name = "bodyText";
             this.bodyText.Size = new System.Drawing.Size(511, 317);
             this.bodyText.TabIndex = 21;
-            this.bodyText.Text = "Enter Slide Body Here, bold keywords";
+            this.bodyText.Text = "Enter Slide Body Here, bold keywords to increase search accuracy.";
             this.bodyText.TextChanged += new System.EventHandler(this.bodyText_TextChanged);
             // 
             // titleText
@@ -493,6 +493,7 @@ namespace WindowsFormsApp1
             this.buttonGenerate.TabIndex = 1;
             this.buttonGenerate.Text = "Generate Slide";
             this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
             // buttonBGColor
             // 
