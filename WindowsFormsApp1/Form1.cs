@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using SystemFont = System.Drawing.Font;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Web;
 using DocumentFormat.OpenXml.Presentation;
@@ -33,15 +28,9 @@ namespace WindowsFormsApp1
         // Gives the user the Ability to bold words in the rich text box for the body
         private void buttonBold_Click_1(object sender, EventArgs e)
         {
-            System.Drawing.Font currentFont = bodyText.SelectionFont;
-            if (currentFont.Style != FontStyle.Bold)
-            {
-                bodyText.SelectionFont = new System.Drawing.Font(currentFont.FontFamily, currentFont.Size, FontStyle.Bold);
-            }
-            else
-            {
-                bodyText.SelectionFont = new System.Drawing.Font(currentFont.FontFamily, currentFont.Size, FontStyle.Regular);
-            }
+            SystemFont currentFont = bodyText.SelectionFont;
+            FontStyle fontStyle = currentFont.Style != FontStyle.Bold ? FontStyle.Bold : FontStyle.Regular;
+            bodyText.SelectionFont = new SystemFont(currentFont.FontFamily, currentFont.Size, fontStyle);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -51,7 +40,7 @@ namespace WindowsFormsApp1
         // Closes the Application
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         //Runs the Image search
@@ -68,11 +57,6 @@ namespace WindowsFormsApp1
                 tempBodyText += bodyPlainText.Substring(start, end - start) + ' ';
                 bodyPlainText = bodyPlainText.Substring(end + 3);
             }
-            // Checks if there were any bold words at all
-            if(tempBodyText.Length != 0)
-            {
-                tempBodyText = tempBodyText.Substring(0, tempBodyText.Length - 1);
-            }
             titlePlainText = titlePlainText + ' ' + tempBodyText;
             //Runs the code to search and display content
             RunQueryAndDisplayResults(titlePlainText);
@@ -83,8 +67,8 @@ namespace WindowsFormsApp1
         {
             string plainTitleText = titleText.Text;
             string bodyPlainText = bodyText.Text;
-            bool[] checkBoxes = {checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked, checkBox6.Checked, checkBox7.Checked, checkBox8.Checked, checkBox9.Checked, checkBox10.Checked };
-
+            bool[] checkBoxes = {checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked, checkBox6.Checked, checkBox7.Checked, checkBox8.Checked, checkBox9.Checked, checkBox10.Checked};
+            Image[] images = {pictureBox1.Image, pictureBox2.Image, pictureBox3.Image, pictureBox4.Image, pictureBox5.Image, pictureBox6.Image, pictureBox7.Image, pictureBox8.Image, pictureBox9.Image, pictureBox10.Image};
             string filepath = "";
             //Prompts the user to select the powerpoint
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -102,52 +86,32 @@ namespace WindowsFormsApp1
             }
             progressBar1.Value = 0;
             // Creates the new slide with title text and body text
-            InsertNewSlide(filepath, 2, plainTitleText, bodyPlainText);
+            try
+            {
+                InsertNewSlide(filepath, 2, plainTitleText, bodyPlainText);
+            } catch(Exception insertSlideException)
+            {
+                errorLabel.Visible = true;
+                errorLabel.Text = insertSlideException.Message;
+            }
             progressBar1.Value = 30;
             // Adds the images to the slide
             int used = 0;
-            var imageCopy = pictureBox1.Image;
             string imageFilePath = filepath.Substring(0, filepath.LastIndexOf(@"\") + 1) + "tempImage.png";
+            Image imageCopy;
             progressBar1.Value = 50;
             for (int i = 0; i < 10; i++)
             {
-                progressBar1.Value += 5;
-                if(used < 5 && checkBoxes[i])
+                if (used >= 5)
                 {
-                    
-                    switch (i + 1)
-                    {
-                        case 1:
-                            imageCopy = pictureBox1.Image;
-                            break;
-                        case 2:
-                            imageCopy = pictureBox2.Image;
-                            break;
-                        case 3:
-                            imageCopy = pictureBox3.Image;
-                            break;
-                        case 4:
-                            imageCopy = pictureBox4.Image;
-                            break;
-                        case 5:
-                            imageCopy = pictureBox5.Image;
-                            break;
-                        case 6:
-                            imageCopy = pictureBox6.Image;
-                            break;
-                        case 7:
-                            imageCopy = pictureBox7.Image;
-                            break;
-                        case 8:
-                            imageCopy = pictureBox8.Image;
-                            break;
-                        case 9:
-                            imageCopy = pictureBox9.Image;
-                            break;
-                        case 10:
-                            imageCopy = pictureBox10.Image;
-                            break;
-                    }
+                    progressBar1.Value = 100;
+                    break;
+                }
+                progressBar1.Value += 5;
+
+                if(checkBoxes[i])
+                {
+                    imageCopy = images[i];
                     imageCopy.Save(@imageFilePath, ImageFormat.Png);
                     AddImage(filepath, @imageFilePath, 500000 + 2250000 * used, 4500000);
                     used++;
@@ -165,11 +129,11 @@ namespace WindowsFormsApp1
             {
                 // Create a query
                 var client = new HttpClient();
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "API Key");
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "dc8a13278a8a4018a4cd19b0c8f32344");
                 var queryString = HttpUtility.ParseQueryString(string.Empty);
                 queryString["q"] = userQuery;
                 queryString["responseFilter"] = "images";
-                var query = "https://api.bing.microsoft.com/v7.0/search?" + queryString;
+                var query = $"https://api.bing.microsoft.com/v7.0/search?{queryString}";
 
                 // Run the query
                 HttpResponseMessage httpResponseMessage = client.GetAsync(query).Result;
@@ -276,6 +240,7 @@ namespace WindowsFormsApp1
                 // Pass the source document and the position and title of the slide to be inserted to the next method.
                 InsertNewSlide(presentationDocument, position, slideTitle, body);
             }
+
         }
 
         // Insert the specified slide into the presentation at the specified position.
@@ -495,6 +460,9 @@ namespace WindowsFormsApp1
 
         }
 
-        
+        private void errorLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

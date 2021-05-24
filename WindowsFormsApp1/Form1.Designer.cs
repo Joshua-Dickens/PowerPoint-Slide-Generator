@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -56,15 +58,14 @@ namespace WindowsFormsApp1
             this.bodyText = new System.Windows.Forms.RichTextBox();
             this.titleText = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.buttonGenerate = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonClose = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,6 +141,24 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(510, 74);
             this.flowLayoutPanel2.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(410, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Bold keywords in the body for more specific image results";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Select up to 5 Images below";
             // 
             // pictureBox1
             // 
@@ -400,6 +419,7 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.buttonGenerate);
             this.flowLayoutPanel3.Controls.Add(this.progressBar1);
+            this.flowLayoutPanel3.Controls.Add(this.errorLabel);
             this.flowLayoutPanel3.Controls.Add(this.buttonClose);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -408,6 +428,15 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetRowSpan(this.flowLayoutPanel3, 2);
             this.flowLayoutPanel3.Size = new System.Drawing.Size(252, 397);
             this.flowLayoutPanel3.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(244, 60);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Once you have filled out your title and body click here to search for images";
             // 
             // buttonSearch
             // 
@@ -420,6 +449,16 @@ namespace WindowsFormsApp1
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(243, 60);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Once you have selected your images click here to generate the slide for the power" +
+    "point ";
+            // 
             // buttonGenerate
             // 
             this.buttonGenerate.AutoSize = true;
@@ -431,10 +470,17 @@ namespace WindowsFormsApp1
             this.buttonGenerate.UseVisualStyleBackColor = true;
             this.buttonGenerate.Click += new System.EventHandler(this.buttonGenerate_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 195);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(200, 23);
+            this.progressBar1.TabIndex = 5;
+            // 
             // buttonClose
             // 
             this.buttonClose.AutoSize = true;
-            this.buttonClose.Location = new System.Drawing.Point(3, 224);
+            this.buttonClose.Location = new System.Drawing.Point(3, 244);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 30);
             this.buttonClose.TabIndex = 2;
@@ -446,49 +492,17 @@ namespace WindowsFormsApp1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label1
+            // errorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Select up to 5 Images below";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(410, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bold keywords in the body for more specific image results";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 60);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Once you have filled out your title and body click here to search for images";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 60);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Once you have selected your images click here to generate the slide for the power" +
-    "point ";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 195);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(200, 23);
-            this.progressBar1.TabIndex = 5;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(3, 221);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(219, 20);
+            this.errorLabel.TabIndex = 6;
+            this.errorLabel.Text = "Error: File open in powerpoint.";
+            this.errorLabel.Visible = false;
+            this.errorLabel.Click += new System.EventHandler(this.errorLabel_Click);
             // 
             // Form1
             // 
@@ -559,6 +573,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
